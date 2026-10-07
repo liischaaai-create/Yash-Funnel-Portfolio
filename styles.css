@@ -2990,3 +2990,7 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
 .gs-step { align-items: center; min-height: 96px; }
 .gs-step__body { display: flex; flex-direction: column; justify-content: center; }
 .gs-copy { align-self: center; }
+
+/* Contact cards: Email + LinkedIn side by side, Location & Hours full width below */
+.gs-step--wide { grid-column: 1 / -1; }
+@media (max-width: 640px) { .gs-step--wide { grid-column: auto; } }
