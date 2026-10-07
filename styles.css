@@ -3105,9 +3105,9 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
 /* The reveal animation sets opacity:1; keep the background visual faded */
 @media (max-width: 1100px) {
   .hero__visual[data-reveal],
-  .hero__visual[data-reveal].is-visible { opacity: .3; }
+  .hero__visual[data-reveal].is-visible { opacity: .45; }
 }
 @media (max-width: 600px) {
   .hero__visual[data-reveal],
-  .hero__visual[data-reveal].is-visible { opacity: .22; }
+  .hero__visual[data-reveal].is-visible { opacity: .38; }
 }
