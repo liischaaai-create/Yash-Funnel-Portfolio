@@ -3131,3 +3131,10 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
 
   .lede, .gs__sub { font-size: 16.5px; }
 }
+
+/* Phones: footer link groups in 3 columns */
+@media (max-width: 600px) {
+  .footer__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .footer__col h4 { font-size: 11px; letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer__col a { font-size: 13px; line-height: 1.35; padding: 5px 0; }
+}
