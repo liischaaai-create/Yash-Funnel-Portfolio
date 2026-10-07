@@ -3164,3 +3164,53 @@ main > section { scroll-margin-top: 100px; }
   .hero .eyebrow { margin-bottom: 12px; }
   h1.hero__h1 { margin-top: 6px; }
 }
+
+/* ===========================================================
+   Phones: one type scale for the whole page
+   L1 hero headline 40 / L2 section headline 23-30 / L3 callout title 22 /
+   L4 card title 18 / lead 17 / subheadline 16.5 / body 15.5 / card body 14.5 /
+   small 14 / labels 12
+   =========================================================== */
+@media (max-width: 600px) {
+  /* L2: section headlines (sized to keep 2-line headings on one line each) */
+  .h2, .gs__title { font-size: clamp(23px, 6.4vw, 30px); }
+
+  /* L3: callout titles, below section headlines */
+  .cta-band__title { font-size: 22px; line-height: 1.2; }
+  .ta-hero__num { font-size: 32px; }
+
+  /* L4: card titles */
+  .work__title, .principle h3 { font-size: 18px; line-height: 1.3; }
+  .services__grid .service__title { font-size: 15px; }
+  .gs-step__title { font-size: 16px; }
+  .founder__name { font-size: 18px; }
+
+  /* Lead and subheadlines */
+  .hero__sub--mobile { font-size: 17px; }
+  .lede, .gs__sub { font-size: 16.5px; }
+
+  /* Body text: one size for every section paragraph */
+  .about .prose p,
+  .about .prose .about__lead,
+  .turnaround .prose p,
+  .cta-band__text { font-size: 15.5px; line-height: 1.7; }
+
+  /* Card body text */
+  .work__summary,
+  .services__grid .service p,
+  .principle p,
+  .step__body p { font-size: 14.5px; line-height: 1.65; }
+
+  /* Small text */
+  .services__grid .service__kicker { font-size: 14px; }
+  .section__head .eyebrow, .two-col__left > .eyebrow, .gs__head > .eyebrow, .cta-band__k { font-size: 12px; }
+}
+@media (max-width: 600px) {
+  .cta-band__title { font-size: clamp(19px, 5.3vw, 22px); }
+  .hero__copy .hero__sub--mobile { font-size: 17px; }
+}
+/* Never split highlighted keywords; no hyphenation on phones */
+.about .prose .kw { -webkit-hyphens: none; hyphens: none; }
+@media (max-width: 600px) {
+  .about .prose p { -webkit-hyphens: manual; hyphens: manual; }
+}
