@@ -3214,3 +3214,16 @@ main > section { scroll-margin-top: 100px; }
 @media (max-width: 600px) {
   .about .prose p { -webkit-hyphens: manual; hyphens: manual; }
 }
+
+/* Work cards: payment gateway tag */
+.tag--pay {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(45,186,112,.12);
+  color: #1E9E5A;
+}
+.tag--pay svg { width: 14px; height: 14px; flex-shrink: 0; }
+/* 3-column layout: the first row has a 2-line tag area (payment tag), so all
+   three cards in that row reserve the same height and titles line up */
+@media (min-width: 1101px) {
+  .work__grid > .work:nth-child(-n+3) .work__meta { min-height: 70px; align-content: flex-start; }
+}
