@@ -3138,3 +3138,29 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
   .footer__col h4 { font-size: 11px; letter-spacing: 0.06em; margin-bottom: 12px; }
   .footer__col a { font-size: 13px; line-height: 1.35; padding: 5px 0; }
 }
+
+/* Phones: footer bottom strip, three centred single lines */
+@media (max-width: 600px) {
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    font-size: 11.5px;
+  }
+  .footer__bottom > span { white-space: nowrap; }
+}
+@media (max-width: 370px) {
+  .footer__bottom { font-size: 10.5px; }
+}
+
+/* In-page jumps land below the fixed welcome bar (+ menu bar on desktop) */
+main > section { scroll-margin-top: 100px; }
+@media (max-width: 920px) { main > section { scroll-margin-top: 40px; } }
+
+/* Phones: tighter space around the hero eyebrow */
+@media (max-width: 600px) {
+  .has-welcome .hero { padding-top: calc(30px + var(--welcome-h)); }
+  .hero .eyebrow { margin-bottom: 12px; }
+  h1.hero__h1 { margin-top: 6px; }
+}

@@ -3,6 +3,24 @@
 (function () {
   'use strict';
 
+  // -- Always open at the top (hero) on load/reload ------------------------
+  // In-page links scroll smoothly without adding #section to the address,
+  // so a reload never jumps back to the last section visited.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+  window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    const target = id ? document.getElementById(id) : null;
+    if (!target && id !== 'top') return;
+    e.preventDefault();
+    if (id === 'top' || !target) window.scrollTo({ top: 0, behavior: 'smooth' });
+    else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   // -- Sticky nav state ----------------------------------------------------
   const nav = document.getElementById('nav');
   const onScroll = () => {
