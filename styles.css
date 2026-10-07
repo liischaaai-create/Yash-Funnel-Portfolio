@@ -3227,3 +3227,27 @@ main > section { scroll-margin-top: 100px; }
 @media (min-width: 1101px) {
   .work__grid > .work:nth-child(-n+3) .work__meta { min-height: 70px; align-content: flex-start; }
 }
+
+/* Work card tags: one line, one size on every card */
+.work__meta { flex-wrap: nowrap; gap: 6px; }
+.work__meta .tag { font-size: 11px; padding: 5px 10px; letter-spacing: 0.03em; white-space: nowrap; }
+.work__meta .tag--pay { gap: 5px; }
+.work__meta .tag--pay svg { width: 13px; height: 13px; }
+@media (min-width: 1101px) {
+  .work__grid > .work:nth-child(-n+3) .work__meta { min-height: 0; }
+}
+/* Tags adapt to the card's own width, so they stay on one line everywhere */
+.work { container-type: inline-size; }
+@container (max-width: 345px) {
+  .work__meta .tag { font-size: 10.5px; padding: 5px 8px; }
+  .pay-long { display: none; }
+}
+@container (max-width: 250px) {
+  .work__meta { gap: 4px; }
+  .work__meta .tag { font-size: 9.5px; padding: 4px 7px; letter-spacing: 0.02em; }
+  .work__meta .tag--pay svg { display: none; }
+}
+/* Very small phones (320px): headlines may shrink a little further */
+@media (max-width: 340px) {
+  .h2, .gs__title { font-size: 6.2vw; }
+}
