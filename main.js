@@ -3,19 +3,6 @@
 (function () {
   'use strict';
 
-  // -- Welcome bar: close button, remembered for later visits ---------------
-  const WELCOME_KEY = 'ya-welcome-closed';
-  try {
-    if (localStorage.getItem(WELCOME_KEY) === '1') document.body.classList.remove('has-welcome');
-  } catch (err) { /* storage unavailable: keep the bar */ }
-  const welcomeClose = document.querySelector('.welcome__close');
-  if (welcomeClose) {
-    welcomeClose.addEventListener('click', () => {
-      document.body.classList.remove('has-welcome');
-      try { localStorage.setItem(WELCOME_KEY, '1'); } catch (err) { /* ignore */ }
-    });
-  }
-
   // -- Sticky nav state ----------------------------------------------------
   const nav = document.getElementById('nav');
   const onScroll = () => {

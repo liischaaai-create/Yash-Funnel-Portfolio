@@ -2953,19 +2953,6 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
   transition: opacity .2s;
 }
 .welcome__link:hover { opacity: .85; }
-.welcome__close {
-  position: absolute;
-  right: 24px; top: 50%;
-  transform: translateY(-50%);
-  width: 26px; height: 26px;
-  border: 0; border-radius: 50%;
-  display: grid; place-items: center;
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  transition: background .2s;
-}
-.welcome__close:hover { background: rgba(255,255,255,.3); }
-.welcome__close svg { width: 14px; height: 14px; }
 
 /* Push the nav and the hero down while the bar is showing */
 .has-welcome .nav { top: var(--welcome-h); }
@@ -2976,8 +2963,6 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
 @media (max-width: 900px) {
   .welcome__long { display: none; }
   .welcome__short { display: inline; }
-  .welcome__inner { padding-right: 56px; }
-  .welcome__close { right: 16px; }
 }
 @media (max-width: 420px) {
   .welcome__text { font-size: 12.5px; }
