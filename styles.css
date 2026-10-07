@@ -2975,3 +2975,103 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
 .gs-step { align-items: center; min-height: 96px; }
 .gs-step__body { display: flex; flex-direction: column; justify-content: center; }
 .gs-copy { align-self: center; }
+
+/* ===========================================================
+   Mobile pass + shared tweaks
+   =========================================================== */
+
+/* About: recruiter keywords (all screens) */
+.about .prose .kw {
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(transparent 62%, rgba(255,90,60,.32) 62%);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Footer intro line (all screens) */
+.footer__intro {
+  margin: 0 0 10px;
+  max-width: 380px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #C8CFEA;
+}
+
+/* Hero body: desktop text by default, short text on phones */
+.hero__sub--mobile { display: none; }
+
+/* ---------- Tablet and phone ---------- */
+@media (max-width: 1100px) {
+  /* Show the plane + chips visual below the copy, scaled down */
+  .hero__visual {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: 360px;
+    margin: 36px auto 0;
+  }
+}
+
+@media (max-width: 920px) {
+  /* No menu bar on smaller screens: the welcome bar sits alone at the top */
+  .nav { display: none; }
+  .has-welcome .hero { padding-top: calc(56px + var(--welcome-h)); }
+  .hero { padding-top: 64px; }
+}
+
+@media (max-width: 600px) {
+  .hide-sm { display: none; }
+
+  /* Hero eyebrow on one line */
+  .hero .eyebrow { font-size: 11.5px; letter-spacing: 0.08em; white-space: nowrap; gap: 8px; }
+
+  /* Hero body: short version */
+  .hero__sub--desktop { display: none; }
+  .hero__sub--mobile { display: block; font-size: 17px; margin-bottom: 28px; text-wrap: pretty; }
+
+  /* Compact visual on phones */
+  .hero__visual { height: 300px; margin-top: 28px; }
+  .hero-plane { width: 118px; }
+  .hero-note { font-size: 22px; left: 14%; }
+  .hero-note__arrow { width: 44px; left: 28%; top: 21%; }
+  .hero-chip { padding: 9px 12px 9px 10px; gap: 8px; font-size: 12.5px; border-radius: 12px; }
+  .hero-chip__icon svg { width: 17px; height: 17px; }
+  .hero-chip--design { right: 0; }
+
+  /* Hero stat cards: 2 columns, smaller */
+  .hero__strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 36px; }
+  .strip__item {
+    grid-template-columns: 1fr;
+    grid-template-areas: "icon" "num" "label";
+    row-gap: 8px;
+    align-items: start;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .strip__icon { width: 36px; height: 36px; border-radius: 10px; }
+  .strip__item { align-content: start; }
+  .strip__icon, .strip__num, .strip__label { align-self: start; }
+  .strip__icon svg { width: 18px; height: 18px; }
+  .strip__num { font-size: 24px; gap: 5px; }
+  .strip__unit { font-size: 11px; }
+  .strip__label { margin-top: 0; font-size: 12px; line-height: 1.4; }
+
+  /* One heading + subheading size for every section */
+  .h2, .gs__title { font-size: clamp(22px, 6.4vw, 28px); line-height: 1.15; margin-bottom: 16px; }
+  .lede, .gs__sub { font-size: 14.5px; line-height: 1.6; text-wrap: balance; }
+  .h2__line { white-space: nowrap; }
+
+  /* About credentials: 2 columns, smaller */
+  .creds--row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 32px; }
+  .creds--row .cred { padding: 12px 14px; }
+  .cred__k { font-size: 10.5px; letter-spacing: 0.08em; }
+  .cred__v { font-size: 13px; line-height: 1.4; display: block; }
+
+  /* Copy buttons: bigger tap area */
+  .gs-copy { width: 40px; height: 40px; }
+}
+
+@media (max-width: 370px) {
+  .hero .eyebrow { font-size: 10.5px; }
+}
