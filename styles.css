@@ -3111,3 +3111,23 @@ h1.hero__h1 { font-size: clamp(36px, 3.5vw, 50px); white-space: nowrap; }
   .hero__visual[data-reveal],
   .hero__visual[data-reveal].is-visible { opacity: .38; }
 }
+
+/* ----------- Phones: every section header centred, larger subheadlines ----------- */
+@media (max-width: 600px) {
+  .section__head,
+  .section__head--left { text-align: center; margin-left: auto; margin-right: auto; }
+  .section__head .eyebrow,
+  .section__head--left .eyebrow { justify-content: center; }
+
+  .about .two-col__left > .eyebrow,
+  .turnaround .two-col__left > .eyebrow,
+  .gs__head > .eyebrow { display: flex; justify-content: center; }
+  .about .two-col__left > .h2,
+  .turnaround .two-col__left > .h2,
+  .gs__head > .gs__title,
+  .gs__head > .gs__sub { text-align: center; }
+  .gs__head > .gs__sub { margin-left: auto; margin-right: auto; }
+  .gs-tags { justify-content: center; }
+
+  .lede, .gs__sub { font-size: 16.5px; }
+}
